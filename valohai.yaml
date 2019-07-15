@@ -3,7 +3,10 @@
 - step:
     name: Main
     image: tensorflow/tensorflow:1.13.1-gpu-py3
-    command: python code/sarcasm.py
+    command: 
+        - apt-get install python3-pip 
+        - pip install pandas
+        - python code/sarcasm.py
     #inputs:
     #  - name: example-input
     #    default: https://example.com/
