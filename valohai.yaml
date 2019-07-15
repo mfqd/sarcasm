@@ -1,0 +1,14 @@
+---
+
+- step:
+    name: Main
+    image: tensorflow/tensorflow:1.13.1-gpu-py3
+    command: python sarcasm.py
+    #inputs:
+    #  - name: example-input
+    #    default: https://example.com/
+    #parameters:
+    # - name: example
+    #   description: Example parameter
+    #   type: integer
+    #   default: 300
