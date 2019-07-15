@@ -5,7 +5,7 @@
 
 
 import pandas as pd
-df = pd.read_json("valohai/inputs/dataset/Sarcasm_Headlines_Dataset.json", lines=True)
+df = pd.read_json("/valohai/inputs/dataset/Sarcasm_Headlines_Dataset.json", lines=True)
 df.head()
 
 
