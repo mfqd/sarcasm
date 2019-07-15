@@ -6,6 +6,7 @@
     command: 
         - apt-get install python3-pip 
         - pip install pandas
+        - pip install keras 
         - python code/sarcasm.py
     inputs:
       - name: dataset
