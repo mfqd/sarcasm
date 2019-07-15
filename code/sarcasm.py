@@ -5,7 +5,7 @@
 
 
 import pandas as pd
-df = pd.read_json("../input/Sarcasm_Headlines_Dataset.json", lines=True)
+df = pd.read_json("valohai/inputs/sarcasm/Sarcasm_Headlines_Dataset.json", lines=True)
 df.head()
 
 
@@ -46,7 +46,7 @@ y = df['is_sarcastic']
 # In[ ]:
 
 
-EMBEDDING_FILE = '../input/glove-global-vectors-for-word-representation/glove.6B.200d.txt'
+EMBEDDING_FILE = '/valohai/inputs/glove/glove.6B.200d.txt'
 def get_coefs(word,*arr): return word, np.asarray(arr, dtype='float32')
 embeddings_index = dict(get_coefs(*o.split(" ")) for o in open(EMBEDDING_FILE) if len(o)>100)
 
@@ -151,7 +151,7 @@ plt.show()
 # In[ ]:
 
 
-EMBEDDING_FILE = '../input/fasttext-crawl-300d-2m/crawl-300d-2M.vec'
+EMBEDDING_FILE = '/valohai/inputs/crawl/crawl-300d-2M.vec'
 def get_coefs(word, *arr): return word, np.asarray(arr, dtype='float32')
 embeddings_index = dict(get_coefs(*o.rstrip().rsplit(' ')) for o in open(EMBEDDING_FILE))
 embed_size = 300

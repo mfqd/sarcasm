@@ -7,9 +7,13 @@
         - apt-get install python3-pip 
         - pip install pandas
         - python code/sarcasm.py
-    #inputs:
-    #  - name: example-input
-    #    default: https://example.com/
+    inputs:
+      - name: dataset
+        default: datum://016bf78a-f7b2-fd4d-183a-1998de732a93
+      - name : crawl
+        default : datum://016bf78a-e054-1d91-751e-3c507c30374f
+      - name : glove 
+        default : datum://016bf797-65a8-b638-be6f-19e155cd2331 
     #parameters:
     # - name: example
     #   description: Example parameter
