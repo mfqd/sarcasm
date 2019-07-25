@@ -31,7 +31,12 @@
 - step: 
     name: Glove only 
     image: tensorflow/tensorflow:1.13.1-gpu-py3
-    command: python code/sarcasm-glove.py
+    command: 
+        - pip install --upgrade pip
+        - pip install pandas
+        - pip install keras 
+        - pip install matplotlib
+        - python code/sarcasm-glove.py
     inputs:
       - name: dataset
         default: datum://016bf78a-f7b2-fd4d-183a-1998de732a93
