@@ -108,7 +108,7 @@ import os
 OUTPUTS_DIR = os.getenv('VH_OUTPUTS_DIR', './outputs')
 fig1.savefig(os.path.join(OUTPUTS_DIR, 'fig1.png'))
 
-
+import json
 for i in range(epochs):
         # Record summaries and test-set accuracy
         summary, acc = sess.run([merged, accuracy], feed_dict=feed_dict(False))

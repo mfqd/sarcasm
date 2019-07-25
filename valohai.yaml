@@ -44,3 +44,14 @@
         default : datum://016bf78a-e054-1d91-751e-3c507c30374f
       - name : glove 
         default : datum://016bf797-65a8-b638-be6f-19e155cd2331 
+    parameters:
+      - name: epochs
+        pass-as: --epochs={v}
+        description: epochs
+        type: integer
+        default: 5
+      - name: batch_size
+        pass-as: --batch_size={v}
+        description: batch_size 
+        type: integer
+        default: 100

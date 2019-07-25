@@ -18,6 +18,26 @@ df['len'] = df['headline'].apply(lambda x: len(x.split(" ")))
 df.head()
 
 
+
+def parse_args():
+    parser = argparse.ArgumentParser()
+    parser.add_argument(
+                        '--epochs',
+                        type=int,
+                        default=5,
+                        help='epoch',
+                        )
+    parser.add_argument(
+                    '--batch_size',
+                    type=int,
+                    default=100,
+                    help='Training batch size (larger batches are usually more efficient on GPUs)',
+                    )
+    flags = parser.parse_args()
+    return flags
+
+
+
 # In[ ]:
 
 
@@ -73,8 +93,8 @@ model.add(Dropout(0.5))
 model.add(Dense(1, activation="sigmoid"))
 model.compile(loss='binary_crossentropy', optimizer='adam', metrics=['accuracy'])
 
-batch_size = 100
-epochs = 5
+batch_size = flags.batch_size
+epochs = flags.epochs
 history = model.fit(X, y, batch_size=batch_size, epochs=epochs, validation_split=0.2)
 
 
