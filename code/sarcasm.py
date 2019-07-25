@@ -102,9 +102,12 @@ vline_cut = np.where(history.history['val_loss'] == np.min(history.history['val_
 ax2.axvline(x=vline_cut, color='k', linestyle='--')
 ax2.set_title("Model Loss")
 ax2.legend(['train', 'test'])
-fig1.savefig('/valohai/outputs/fig1.png')
-plt.savefig('/valohai/outputs/fig1-ok', format = 'png)
-print("test pourquoi allo")
+
+
+import os
+OUTPUTS_DIR = os.getenv('VH_OUTPUTS_DIR', './outputs')
+fig1.savefig(os.path.join(OUTPUTS_DIR, 'fig1.png'))
+
 
 for i in range(epochs):
         # Record summaries and test-set accuracy
