@@ -105,7 +105,6 @@ plt.savefig(path)
 
 
 
-
-
+import json
 for i in range(epochs):
     print(json.dumps({'step': i, 'accuracy': history.history['acc'][i]}))
