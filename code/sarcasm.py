@@ -102,7 +102,7 @@ vline_cut = np.where(history.history['val_loss'] == np.min(history.history['val_
 ax2.axvline(x=vline_cut, color='k', linestyle='--')
 ax2.set_title("Model Loss")
 ax2.legend(['train', 'test'])
-plt.show()
+plt.savefig("/valohai/outputs/fig1.png")
 
 
 # In[ ]:
@@ -127,6 +127,7 @@ epochs = 5
 history = model.fit(X, y, batch_size=batch_size, epochs=epochs, validation_split=0.2)
 
 
+
 # In[ ]:
 
 
@@ -145,7 +146,7 @@ vline_cut = np.where(history.history['val_loss'] == np.min(history.history['val_
 ax2.axvline(x=vline_cut, color='k', linestyle='--')
 ax2.set_title("Model Loss")
 ax2.legend(['train', 'test'])
-plt.show()
+plt.savefig("/valohai/outputs/fig2.png")
 
 
 # In[ ]:
@@ -204,5 +205,5 @@ vline_cut = np.where(history.history['val_loss'] == np.min(history.history['val_
 ax2.axvline(x=vline_cut, color='k', linestyle='--')
 ax2.set_title("Model Loss")
 ax2.legend(['train', 'test'])
-plt.show()
+plt.savefig("/valohai/outputs/fig3.png")
 
