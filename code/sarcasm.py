@@ -103,6 +103,7 @@ ax2.axvline(x=vline_cut, color='k', linestyle='--')
 ax2.set_title("Model Loss")
 ax2.legend(['train', 'test'])
 plt.savefig("/valohai/outputs/fig1.png")
+print("test pourquoi allo")
 
 
 # In[ ]:
