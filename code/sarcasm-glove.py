@@ -102,3 +102,10 @@ ax2.set_title("Model Loss")
 ax2.legend(['train', 'test'])
 
 plt.savefig(path)
+
+
+
+
+
+for i in range(epochs):
+    print(json.dumps({'step': i, 'accuracy': history.history['acc'][i]}))
