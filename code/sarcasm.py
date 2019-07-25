@@ -102,8 +102,17 @@ vline_cut = np.where(history.history['val_loss'] == np.min(history.history['val_
 ax2.axvline(x=vline_cut, color='k', linestyle='--')
 ax2.set_title("Model Loss")
 ax2.legend(['train', 'test'])
-plt.savefig("/valohai/outputs/fig1.png")
+fig.savefig('/valohai/outputs/fig1.png')
 print("test pourquoi allo")
+
+for i in range(epochs):
+        # Record summaries and test-set accuracy
+        summary, acc = sess.run([merged, accuracy], feed_dict=feed_dict(False))
+        test_writer.add_summary(summary, i)
+    print(json.dumps({'step': i, 'accuracy': history.history['acc']}))
+
+
+
 
 
 # In[ ]:
