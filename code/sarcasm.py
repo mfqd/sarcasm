@@ -87,8 +87,8 @@ history = model.fit(X, y, batch_size=batch_size, epochs=epochs, validation_split
 
 
 import matplotlib.pyplot as plt
-fig, (ax1, ax2) = plt.subplots(1,2,figsize=(15,5))
-fig.suptitle("Performance of Glove Vectors")
+fig1, (ax1, ax2) = plt.subplots(1,2,figsize=(15,5))
+fig1.suptitle("Performance of Glove Vectors")
 ax1.plot(history.history['acc'])
 ax1.plot(history.history['val_acc'])
 vline_cut = np.where(history.history['val_acc'] == np.max(history.history['val_acc']))[0][0]
@@ -102,14 +102,15 @@ vline_cut = np.where(history.history['val_loss'] == np.min(history.history['val_
 ax2.axvline(x=vline_cut, color='k', linestyle='--')
 ax2.set_title("Model Loss")
 ax2.legend(['train', 'test'])
-fig.savefig('/valohai/outputs/fig1.png')
+fig1.savefig('/valohai/outputs/fig1.png')
+plt.savefig('/valohai/outputs/fig1-ok', format = 'png)
 print("test pourquoi allo")
 
 for i in range(epochs):
         # Record summaries and test-set accuracy
         summary, acc = sess.run([merged, accuracy], feed_dict=feed_dict(False))
         test_writer.add_summary(summary, i)
-    print(json.dumps({'step': i, 'accuracy': history.history['acc']}))
+    print(json.dumps({'step': i, 'accuracy': history.history['acc'][i]}))
 
 
 
@@ -141,8 +142,8 @@ history = model.fit(X, y, batch_size=batch_size, epochs=epochs, validation_split
 # In[ ]:
 
 
-fig, (ax1, ax2) = plt.subplots(1,2,figsize=(15,5))
-fig.suptitle("Performance of Model without pretrained embeddings")
+fig2, (ax1, ax2) = plt.subplots(1,2,figsize=(15,5))
+fig2.suptitle("Performance of Model without pretrained embeddings")
 ax1.plot(history.history['acc'])
 ax1.plot(history.history['val_acc'])
 vline_cut = np.where(history.history['val_acc'] == np.max(history.history['val_acc']))[0][0]
@@ -156,7 +157,7 @@ vline_cut = np.where(history.history['val_loss'] == np.min(history.history['val_
 ax2.axvline(x=vline_cut, color='k', linestyle='--')
 ax2.set_title("Model Loss")
 ax2.legend(['train', 'test'])
-plt.savefig("/valohai/outputs/fig2.png")
+fig2.savefig("/valohai/outputs/fig2.png")
 
 
 # In[ ]:
@@ -200,8 +201,8 @@ history = model.fit(X, y, batch_size=batch_size, epochs=epochs, validation_split
 # In[ ]:
 
 
-fig, (ax1, ax2) = plt.subplots(1,2,figsize=(15,5))
-fig.suptitle("Performance of Model with Fasttext embeddings")
+fig3, (ax1, ax2) = plt.subplots(1,2,figsize=(15,5))
+fig3.suptitle("Performance of Model with Fasttext embeddings")
 ax1.plot(history.history['acc'])
 ax1.plot(history.history['val_acc'])
 vline_cut = np.where(history.history['val_acc'] == np.max(history.history['val_acc']))[0][0]
@@ -215,5 +216,5 @@ vline_cut = np.where(history.history['val_loss'] == np.min(history.history['val_
 ax2.axvline(x=vline_cut, color='k', linestyle='--')
 ax2.set_title("Model Loss")
 ax2.legend(['train', 'test'])
-plt.savefig("/valohai/outputs/fig3.png")
+fig3.savefig("/valohai/outputs/fig3.png")
 
