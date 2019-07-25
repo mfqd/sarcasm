@@ -21,3 +21,8 @@
     #   description: Example parameter
     #   type: integer
     #   default: 300
+
+- step: 
+    name: tensorflow/tensorflow
+    image: tensorflow/tensorflow:1.13.1-gpu-py3
+    command: python code/testing.py
