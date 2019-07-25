@@ -3,6 +3,7 @@ import pandas as pd
 df = pd.read_json("/valohai/inputs/dataset/Sarcasm_Headlines_Dataset.json", lines=True)
 df.head()
 
+import argparse
 
 # In[ ]:
 
@@ -36,7 +37,7 @@ def parse_args():
     flags = parser.parse_args()
     return flags
 
-
+flags = parse_args()
 
 # In[ ]:
 
